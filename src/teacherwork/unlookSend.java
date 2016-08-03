@@ -9,9 +9,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class unlookSend {
-	//String 
+	String user;
+	String password;
 	public unlookSend() {
-		
+		user = new person().user;
+		password = new person().password;
 	}
 	public void run() throws Exception{
 		Properties properties = new Properties();
