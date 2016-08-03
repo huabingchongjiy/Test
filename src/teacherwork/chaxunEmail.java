@@ -12,7 +12,7 @@ import javax.mail.Session;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
 
-//try
+//try2
 class person{
 	
 	public String user = "shenxiaoya3@163.com";//閭鐨勭敤鎴峰悕
