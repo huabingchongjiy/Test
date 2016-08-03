@@ -20,6 +20,7 @@ import com.sun.mail.imap.IMAPStore;
  class MyThread extends Thread{
 	
 public void run() {
+	//Jesen:此处实现的功能只是每隔30分钟扫描邮箱，且只有9次
 	for(int i = 1;i<10;i++){
 		System.out.println("i");
 		try{
@@ -82,6 +83,12 @@ public void run() {
 public class Email {
 
 	
+	/**
+	 * 程序改进：
+	 * 1.每隔15分钟扫描邮箱一次,可以考虑使用Timer或者ScheduledExecutorService
+	 * 2.当发现shenxiaoya3@163.com邮箱中有超过30分钟未被读取的邮件，请发一封邮件给24963386@qq.com
+	 * 
+	 */
 	public static void main(String[] args) throws Exception{
 		MyThread m = new MyThread();
 		m.start();
