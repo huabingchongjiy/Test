@@ -12,6 +12,18 @@ import javax.mail.Session;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
 
+
+class person{
+	
+	public String user = "shenxiaoya3@163.com";//邮箱的用户名
+	public String password = "1234554321";//邮箱的密码
+	
+	public person(String user,String password) {
+		this.user = user;
+		this.password = password;
+	}
+}
+
 public class chaxunEmail extends TimerTask{
 	public String user = "shenxiaoya3@163.com";//邮箱的用户名
 	public String password = "1234554321";//邮箱的密码
