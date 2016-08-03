@@ -85,7 +85,7 @@ public class Email {
 	public static void main(String[] args) throws Exception{
 		MyThread m = new MyThread();
 		m.start();
-		System.out.println("test chngne!");
+		System.out.println("test change!");
 	}
 	
 	
