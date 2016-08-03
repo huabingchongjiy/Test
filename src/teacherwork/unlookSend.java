@@ -9,8 +9,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class unlookSend {
-	
-	
+	//String 
+	public unlookSend() {
+		
+	}
 	public void run() throws Exception{
 		Properties properties = new Properties();
 		properties.setProperty("mail.host","smtp.163.com");

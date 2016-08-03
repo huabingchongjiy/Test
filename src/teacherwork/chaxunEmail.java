@@ -18,6 +18,9 @@ class person{
 	public String user = "shenxiaoya3@163.com";//邮箱的用户名
 	public String password = "1234554321";//邮箱的密码
 	
+	public person(){
+		
+	}
 	public person(String user,String password) {
 		this.user = user;
 		this.password = password;
@@ -25,9 +28,15 @@ class person{
 }
 
 public class chaxunEmail extends TimerTask{
-	public String user = "shenxiaoya3@163.com";//邮箱的用户名
-	public String password = "1234554321";//邮箱的密码
-	public int time = 15;//设置时间为15；每15分钟查看一次邮件
+	public String user ;
+	public String password;
+	public int chaxuntime = 15;//设置时间为15；每15分钟查看一次邮件
+	
+	public chaxunEmail() {
+		// TODO Auto-generated constructor stub
+		user = new person().user;
+		password = new person().password;
+	}
 	public void run() {
 		// TODO Auto-generated method stub
 		try{			
@@ -88,7 +97,7 @@ public class chaxunEmail extends TimerTask{
 		
 		Timer timer = new Timer();
 		chaxunEmail chaxun = new chaxunEmail();
-		timer.schedule(chaxun, 0, 1000*60*chaxun.time);
+		timer.schedule(chaxun, 0, 1000*60*chaxun.chaxuntime);
 	}
 
 }
