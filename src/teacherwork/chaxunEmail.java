@@ -1,5 +1,7 @@
 package teacherwork;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -8,6 +10,7 @@ import javax.mail.Flags;
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.Session;
+import javax.xml.crypto.Data;
 
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
@@ -69,9 +72,24 @@ public class chaxunEmail extends TimerTask{
 				Flags flags = message.getFlags();
 				if (flags.contains(Flags.Flag.SEEN)) {
 					System.out.println("这是一份已读邮件");
+
 				}
 				else {
 					System.out.println("未读邮件");
+					//判断未读邮件有没有超过30分钟
+					int i = 30;	//设置未查看为30分钟
+					Calendar c = Calendar.getInstance(); //获取当前时间
+					int hour = c.get(Calendar.HOUR_OF_DAY); //获取当前时间的小时数
+					int minute = c.get(Calendar.MINUTE);  //获取当前时间的分钟数
+					int sendhour = message.getSentDate().getHours();//获取邮件发送时间的小时
+					int sendtime = message.getSentDate().getMinutes();//获取邮件发送时间的分钟
+					
+					//如果当前时间超过邮件发送时间30分钟，启动转发功能
+					if(((hour*60+minute)-(sendhour*60+sendtime)) > i){
+						
+						unlookSend unlookSend = new unlookSend();
+						unlookSend.run();
+					}
 				}
 				System.out.println("---------------------------------------------------------------------------");
 				System.out.println("---------------------------------------------------------------------------");

@@ -21,7 +21,6 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
 
-
 /*class MyThread extends Thread{
 	
 public void run() {
@@ -146,7 +145,6 @@ class Tasksending extends TimerTask{
 			}else{
 				i = 0;
 			}
-				
 			Message message = folder.getMessage(messageNumber);
 			//释放资源
 			if(folder != null){
@@ -154,7 +152,8 @@ class Tasksending extends TimerTask{
 			}
 			if (store != null) {
 				store.close();
-			}
+			}	
+			
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -187,7 +186,7 @@ class Sendmail {
 		//指明邮箱的发件人
 		message.setFrom(new InternetAddress("shenxiaoya3@163.com"));
 		//收件人
-		message.setRecipient(Message.RecipientType.TO,new InternetAddress("24963386@qq.com") );
+		message.setRecipient(Message.RecipientType.TO,new InternetAddress("591014118@qq.com") );
 		//邮箱标题
 		message.setSubject("邮件提醒");
 		//邮箱的文本内容
@@ -215,7 +214,7 @@ public class Email {
 		//System.out.println("test change!");
 		Timer timer = new Timer();
 		Tasksending tasksending = new Tasksending();
-		timer.schedule(tasksending, 0, 1000*60*15);//15分钟
+		timer.schedule(tasksending, 0, 1000*60*1);//15分钟
 		
 		
 		

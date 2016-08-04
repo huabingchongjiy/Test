@@ -26,7 +26,7 @@ public class unlookSend {
 		//2、通过session得到transport对象
 		Transport ts = session.getTransport();
 		//3、设置用户名和密码正确连接上邮箱服务器，发送邮件
-		ts.connect("smtp.163.com", "shenxiaoya3@163.com", "1234554321");
+		ts.connect("smtp.163.com", user, password);
 		//4、创建邮件
 		Message message = createSimpleMain(session);
 		//5、发送邮件
