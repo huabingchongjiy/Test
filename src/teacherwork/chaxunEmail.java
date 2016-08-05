@@ -107,11 +107,11 @@ public class chaxunEmail extends TimerTask{
 			}	
 			
 		}catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		
 		Timer timer = new Timer();
 		chaxunEmail chaxun = new chaxunEmail();
