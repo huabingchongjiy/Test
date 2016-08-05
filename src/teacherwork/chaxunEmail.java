@@ -36,7 +36,7 @@ public class chaxunEmail extends TimerTask{
 	public int chaxuntime = 15;//设置时间为15；每15分钟查看一次邮件
 	
 	public chaxunEmail() {
-		// TODO Auto-generated constructor stub
+		
 		user = new person().user;
 		password = new person().password;
 	}
