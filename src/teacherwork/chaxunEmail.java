@@ -41,7 +41,7 @@ public class chaxunEmail extends TimerTask{
 		password = new person().password;
 	}
 	public void run() {
-		// TODO Auto-generated method stub
+		
 		try{			
 			
 			Properties prop = System.getProperties();
